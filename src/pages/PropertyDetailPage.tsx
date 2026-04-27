@@ -93,11 +93,9 @@ export default function PropertyDetailPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
           <div className="absolute top-4 sm:top-6 left-4 sm:left-6 flex gap-2">
-            {property.sourcePlatform && (
-              <Badge className="bg-primary text-black text-[10px] font-black uppercase tracking-widest border-none shadow-xl">
-                Verified {property.sourcePlatform}
-              </Badge>
-            )}
+            <Badge className="bg-primary text-black text-[10px] font-black uppercase tracking-widest border-none shadow-xl">
+              house3 Verified
+            </Badge>
             <Badge className="bg-black/50 backdrop-blur-md text-white text-[10px] font-bold uppercase border border-white/20">
               {property.category}
             </Badge>

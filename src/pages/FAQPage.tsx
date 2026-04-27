@@ -37,12 +37,12 @@ const faqData: FAQItem[] = [
   {
     category: 'Payments',
     question: 'How does the payment process work?',
-    answer: 'For sourced properties: (1) Select property and dates, (2) Send 10% pre-reservation deposit to house3.app wallet, (3) We instantly book on the source platform, (4) You receive a second email with the source platform\'s wallet/QR code to send the remaining 90% directly to them. For owner-listed properties: full payment is sent to house3.app, and we handle everything.'
+    answer: '(1) Select your property and dates, (2) Provide guest details as required, (3) Send the 10% pre-reservation deposit in your chosen cryptocurrency to the displayed wallet, (4) house3 instantly secures the property for you, (5) You receive a confirmation email with instructions for the remaining 90% payment. The entire process is seamless and crypto-native.'
   },
   {
     category: 'Payments',
-    question: 'What is the 10% markup?',
-    answer: 'The 10% is our service fee and equals the pre-reservation deposit. It covers: property curation, instant booking on source platforms, calendar/reservation sync, concierge assistance, and blockchain infrastructure. For sourced properties, this is the ONLY amount that passes through house3.app — the 90% goes directly to the source platform. Zero custody, zero bureaucracy.'
+    question: 'What is the 10% pre-reservation deposit?',
+    answer: 'The 10% pre-reservation deposit secures your booking immediately. It covers: property curation across the world\'s finest destinations, real-time availability verification, calendar sync, 24/7 concierge assistance, and our blockchain payment infrastructure. house3.app operates a zero-custody model — your remaining 90% payment is handled separately and securely.'
   },
   {
     category: 'Payments',
@@ -62,7 +62,7 @@ const faqData: FAQItem[] = [
   {
     category: 'Booking',
     question: 'What is the "Zero Custody" model?',
-    answer: 'For sourced properties, house3.app only receives the 10% pre-reservation deposit (our markup). The remaining 90% goes directly from you to the source platform — we never touch it. You receive the source platform\'s wallet address in a second confirmation email. This eliminates custodial risk entirely.'
+    answer: 'house3.app operates a Zero Custody model. We only process the 10% pre-reservation deposit. The remaining 90% of the property cost is handled through a separate, secure payment flow — you receive clear instructions via email after your booking is confirmed. This design eliminates custodial risk entirely.'
   },
   {
     category: 'Booking',
@@ -72,7 +72,7 @@ const faqData: FAQItem[] = [
   {
     category: 'Booking',
     question: 'What is the cancellation policy?',
-    answer: 'Cancellation terms depend on timing: Before verification — full deposit refund (minus gas). After verification but before full payment — 50% deposit refund. After full payment — subject to the source platform\'s cancellation policy. All refunds are in the original cryptocurrency.'
+    answer: 'Cancellation terms depend on timing: Before verification — full deposit refund (minus network gas fees). After property is secured but before full payment — 50% deposit refund. After full payment — subject to the property\'s specific cancellation policy (shown before booking). All refunds are processed in the original cryptocurrency.'
   },
   {
     category: '$H3APP Token',

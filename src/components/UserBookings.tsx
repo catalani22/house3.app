@@ -153,8 +153,8 @@ export default function UserBookings() {
                         <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" />
                         <p className="text-xs text-muted-foreground leading-relaxed">
                           {i18n.language.startsWith('pt')
-                            ? `Voucher emitido! Sua reserva na plataforma ${property?.sourcePlatform} foi concluída com sucesso. Verifique seu e-mail.`
-                            : `Voucher issued! Your booking on the ${property?.sourcePlatform} platform has been successfully completed. Please check your email.`}
+                            ? `Voucher emitido! Sua reserva foi concluída com sucesso. Verifique seu e-mail.`
+                            : `Voucher issued! Your booking has been successfully completed. Please check your email.`}
                         </p>
                       </div>
                       <Button size="sm" variant="outline" className="text-[10px] uppercase font-bold">

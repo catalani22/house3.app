@@ -89,3 +89,94 @@ export const PLATFORM_WALLETS = {
     SUI: SUI_B,
   }
 };
+
+// ─── Source Platform Token Acceptance ──────────────────────────────────────────
+// CRITICAL: For property reservations, we can ONLY accept tokens that the source
+// platform accepts. Otherwise we cannot immediately forward-book on their platform.
+// This map defines which tokens each source platform supports for payment.
+
+export type SourcePlatform =
+  | 'Travala'
+  | 'LuxuryEstates'
+  | 'CryptoLuxe'
+  | 'JamesEdition'
+  | 'Propy'
+  | 'CryptoCribs'
+  | 'OwnerDirect';
+
+export interface SourcePlatformConfig {
+  name: string;
+  acceptedTokens: string[];
+  chains: WalletKey[];
+  description: string;
+}
+
+// Each source platform's accepted tokens — ONLY these are offered to the guest
+export const SOURCE_PLATFORM_TOKENS: Record<SourcePlatform, SourcePlatformConfig> = {
+  Travala: {
+    name: 'Travala',
+    acceptedTokens: ['BTC', 'ETH', 'SOL', 'USDC', 'USDT', 'BNB', 'AVAX', 'MATIC', 'DAI', 'LINK', 'SUI'],
+    chains: ['BTC', 'EVM', 'SOL', 'SUI'],
+    description: 'Major crypto travel platform — broad token acceptance',
+  },
+  LuxuryEstates: {
+    name: 'LuxuryEstates',
+    acceptedTokens: ['BTC', 'ETH', 'USDC', 'USDT'],
+    chains: ['BTC', 'EVM'],
+    description: 'Ultra-premium real estate — conservative token set',
+  },
+  CryptoLuxe: {
+    name: 'CryptoLuxe',
+    acceptedTokens: ['ETH', 'BTC', 'USDC', 'USDT', 'SOL', 'DAI'],
+    chains: ['BTC', 'EVM', 'SOL'],
+    description: 'Luxury crypto-native vacation rentals',
+  },
+  JamesEdition: {
+    name: 'JamesEdition',
+    acceptedTokens: ['BTC', 'ETH', 'USDC', 'USDT'],
+    chains: ['BTC', 'EVM'],
+    description: 'Ultra-luxury marketplace — blue-chips & stablecoins only',
+  },
+  Propy: {
+    name: 'Propy',
+    acceptedTokens: ['ETH', 'USDC', 'USDT', 'BTC'],
+    chains: ['BTC', 'EVM'],
+    description: 'Blockchain real estate platform',
+  },
+  CryptoCribs: {
+    name: 'CryptoCribs',
+    acceptedTokens: ['BTC', 'ETH', 'SOL', 'USDC', 'USDT', 'AVAX', 'BNB', 'MATIC', 'SUI', 'ARB'],
+    chains: ['BTC', 'EVM', 'SOL', 'SUI'],
+    description: 'Web3-native short-term rental platform — wide acceptance',
+  },
+  OwnerDirect: {
+    name: 'Owner Direct',
+    acceptedTokens: ['BTC', 'ETH', 'SOL', 'USDC', 'USDT', 'SUI', 'BNB', 'AVAX', 'MATIC', 'DAI', 'LINK', 'ARB'],
+    chains: ['BTC', 'EVM', 'SOL', 'SUI'],
+    description: 'Owner-listed properties — house3 admin manages, accepts broad tokens',
+  },
+};
+
+// SAFE FALLBACK: If source platform is unknown, only stablecoins (zero volatility risk)
+const SAFE_FALLBACK_TOKENS = ['USDC', 'USDT', 'DAI'];
+const SAFE_FALLBACK_CHAINS: WalletKey[] = ['EVM'];
+
+/**
+ * Get the list of accepted payment tokens for a property based on its source platform.
+ * NEVER offers tokens that the source platform won't accept.
+ */
+export function getAcceptedTokensForProperty(sourcePlatform?: string): {
+  tokens: string[];
+  chains: WalletKey[];
+} {
+  if (!sourcePlatform) {
+    return { tokens: SAFE_FALLBACK_TOKENS, chains: SAFE_FALLBACK_CHAINS };
+  }
+
+  const config = SOURCE_PLATFORM_TOKENS[sourcePlatform as SourcePlatform];
+  if (!config) {
+    return { tokens: SAFE_FALLBACK_TOKENS, chains: SAFE_FALLBACK_CHAINS };
+  }
+
+  return { tokens: config.acceptedTokens, chains: config.chains };
+}

@@ -31,11 +31,9 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
               referrerPolicy="no-referrer"
             />
             <div className="absolute top-4 left-4 z-10 flex flex-col gap-2">
-              {property.sourcePlatform && (
-                <Badge className="bg-primary text-black text-[9px] font-black uppercase tracking-widest border-none shadow-xl">
-                  Verified {property.sourcePlatform}
-                </Badge>
-              )}
+              <Badge className="bg-primary text-black text-[9px] font-black uppercase tracking-widest border-none shadow-xl">
+                house3 Verified
+              </Badge>
             </div>
             <div className="absolute top-4 right-4 z-10">
               <button 

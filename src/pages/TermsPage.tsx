@@ -18,44 +18,43 @@ export default function TermsPage() {
             <h2 className="text-2xl font-serif mb-4 gold-text">1. Platform Overview</h2>
             <p>
               house3.app is a Web3-native luxury hospitality marketplace that connects guests
-              with ultra-premium properties worldwide. We act exclusively as a technological
-              intermediary — facilitating discovery, crypto payment processing, and concierge
-              coordination between guests and property source platforms.
+              with ultra-premium properties worldwide. We curate the finest properties across
+              multiple destinations — facilitating discovery, crypto payment processing, and
+              24/7 concierge coordination for a seamless booking experience.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-serif mb-4 gold-text">2. Service Model</h2>
-            <h3 className="text-lg font-serif mb-2">2.1 Zero Custody Intermediation</h3>
+            <h3 className="text-lg font-serif mb-2">2.1 Zero Custody Model</h3>
             <p className="mb-4">
-              house3.app operates as a silent, seamless luxury intermediary. We exclusively
-              partner with property platforms that already accept cryptocurrency payments.
+              house3.app operates as a seamless luxury intermediary. We exclusively
+              partner with property networks that accept cryptocurrency payments.
               We never hold, store, or manage guest funds beyond the 10% pre-reservation
-              deposit (our markup). The remaining 90% is paid directly by the guest to the
-              source platform — we facilitate, not custody.
+              deposit. The remaining 90% is settled through a separate, secure payment
+              flow — instructions are provided upon booking confirmation.
             </p>
-            <h3 className="text-lg font-serif mb-2">2.2 Sourced Properties (Platform Partners)</h3>
+            <h3 className="text-lg font-serif mb-2">2.2 Curated Properties</h3>
             <p className="mb-4">
-              For properties sourced from crypto-native partner platforms: our revenue is the
-              10% pre-reservation deposit. Upon receiving your deposit and confirmation email,
-              we immediately book on the source platform. You then receive a second email with
-              the remaining payment details (wallet address or QR code) to send the 90% directly
-              to the source platform. Calendar and reservation sync is automatic.
+              All properties on house3.app are hand-curated from verified luxury networks.
+              Our revenue is the 10% pre-reservation deposit that secures your booking instantly.
+              Upon deposit confirmation, the property is secured and you receive full payment
+              instructions for the remaining amount via email.
             </p>
-            <h3 className="text-lg font-serif mb-2">2.3 Owner-Listed Properties (Direct)</h3>
+            <h3 className="text-lg font-serif mb-2">2.3 Owner-Listed Properties</h3>
             <p className="mb-4">
               Property owners may list directly on house3.app. In this case, we charge a 20%
               administration fee per rental — covering full property management, guest relations,
               booking coordination, and on-ground services via our global network of specialized
-              third-party providers. The 10% guest markup still applies on the total rental price.
+              third-party providers. The 10% guest pre-reservation deposit still applies.
               Owners enjoy zero stress: we handle everything regardless of city or country.
             </p>
             <h3 className="text-lg font-serif mb-2">2.4 Multi-Chain Payments</h3>
             <p>
-              We receive on all chains supported by our partner platforms. This ensures seamless
-              pass-through: guest pays in crypto → we book in crypto on the source platform.
-              Supported networks include Ethereum, Solana, Bitcoin, BNB Chain, Polygon, and
-              Avalanche, with USDC/USDT stablecoins on all EVM chains.
+              house3.app supports payments across multiple blockchain networks — Ethereum,
+              Solana, Bitcoin, BNB Chain, Polygon, Avalanche, and SUI — with USDC/USDT
+              stablecoins on all EVM chains. Available payment tokens may vary by property
+              based on network compatibility.
             </p>
           </section>
 
