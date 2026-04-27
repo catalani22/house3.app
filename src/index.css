@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-primary: #D4AF37; /* Gold */
+  --color-primary-foreground: #1A1A1A;
+  
+  --color-background: #0A0A0A;
+  --color-foreground: #F5F2ED;
+  
+  --color-card: #141414;
+  --color-card-foreground: #F5F2ED;
+  
+  --color-popover: #141414;
+  --color-popover-foreground: #F5F2ED;
+  
+  --color-muted: #1F1F1F;
+  --color-muted-foreground: #A1A1AA;
+  
+  --color-accent: #1F1F1F;
+  --color-accent-foreground: #F5F2ED;
+  
+  --color-border: #262626;
+  --color-input: #262626;
+  --color-ring: #D4AF37;
+  
+  --radius-lg: 0.75rem;
+  --radius-md: calc(0.75rem - 2px);
+  --radius-sm: calc(0.75rem - 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight;
+  }
+}
+
+.luxury-gradient {
+  background: linear-gradient(135deg, #1A1A1A 0%, #0A0A0A 100%);
+}
+
+.gold-text {
+  @apply text-primary;
+  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border {
+  border: 1px solid transparent;
+  background: linear-gradient(var(--color-background), var(--color-background)) padding-box,
+              linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C) border-box;
+}

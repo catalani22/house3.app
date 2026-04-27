@@ -1,0 +1,125 @@
+{
+  "entities": {
+    "Property": {
+      "title": "Property",
+      "description": "A rental property listed on House BZ",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "Name of the property" },
+        "description": { "type": "string", "description": "Detailed description" },
+        "price": { "type": "number", "description": "Monthly rental price" },
+        "location": { "type": "string", "description": "City and neighborhood" },
+        "image": { "type": "string", "format": "uri", "description": "URL to property image" },
+        "rating": { "type": "number", "description": "Average user rating" },
+        "reviews": { "type": "number", "description": "Total number of reviews" },
+        "amenities": { "type": "array", "items": { "type": "string" }, "description": "List of amenities" },
+        "category": { "type": "string", "enum": ["Villa", "Beach House", "Mansion", "Luxury Apartment"], "description": "Property category" },
+        "tags": { "type": "array", "items": { "type": "string" }, "description": "Search tags" },
+        "sourcePlatform": { "type": "string", "description": "Platform where the listing originated" },
+        "originalUrl": { "type": "string", "format": "uri", "description": "Original URL of the listing" },
+        "ownerId": { "type": "string", "description": "UID of the claimed owner" },
+        "isClaimed": { "type": "boolean", "description": "Whether the property has been claimed by an owner" },
+        "lastAvailabilityCheck": { "type": "string", "format": "date-time", "description": "Last time availability was verified" }
+      },
+      "required": ["title", "price", "location", "image", "category"]
+    },
+    "OwnerProfile": {
+      "title": "Owner Profile",
+      "description": "Extended profile for property owners",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "UID of the owner" },
+        "walletAddress": { "type": "string", "description": "Crypto wallet for receiving 90% balance" },
+        "preferredToken": { "type": "string", "enum": ["BTC", "ETH", "SOL", "USDC"], "description": "Preferred token for payments" },
+        "termsAccepted": { "type": "boolean", "description": "Whether electronic terms were signed" },
+        "termsAcceptedAt": { "type": "string", "format": "date-time", "description": "Timestamp of terms acceptance" }
+      },
+      "required": ["userId", "walletAddress", "preferredToken", "termsAccepted"]
+    },
+    "ClaimRequest": {
+      "title": "Claim Request",
+      "description": "Request from an owner to claim a pre-listed property",
+      "type": "object",
+      "properties": {
+        "propertyId": { "type": "string", "description": "ID of the property to claim" },
+        "userId": { "type": "string", "description": "UID of the requester" },
+        "status": { "type": "string", "enum": ["pending", "approved", "rejected"], "description": "Status of the request" },
+        "proofUrl": { "type": "string", "format": "uri", "description": "Link to proof of ownership" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Request timestamp" }
+      },
+      "required": ["propertyId", "userId", "status"]
+    },
+    "ArbitrageTask": {
+      "title": "Arbitrage Task",
+      "description": "Internal task for manual booking on source platforms",
+      "type": "object",
+      "properties": {
+        "bookingId": { "type": "string", "description": "ID of the House BZ booking" },
+        "status": { "type": "string", "enum": ["pending", "in_progress", "completed", "failed"], "description": "Status of the arbitrage" },
+        "notes": { "type": "string", "description": "Internal notes for the team" },
+        "assignedTo": { "type": "string", "description": "UID of the admin handling the task" }
+      },
+      "required": ["bookingId", "status"]
+    },
+    "Booking": {
+      "title": "Booking",
+      "description": "A reservation made by a user",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "UID of the user who booked" },
+        "propertyId": { "type": "string", "description": "ID of the property booked" },
+        "checkIn": { "type": "string", "format": "date-time", "description": "Check-in date" },
+        "checkOut": { "type": "string", "format": "date-time", "description": "Check-out date" },
+        "totalAmount": { "type": "number", "description": "Total price (Original + 10% Markup)" },
+        "depositAmount": { "type": "number", "description": "10% Platform Fee" },
+        "originalAmount": { "type": "number", "description": "Original price on source platform" },
+        "currency": { "type": "string", "description": "USD or BRL" },
+        "paymentStatus": { "type": "string", "enum": ["pending_deposit", "deposit_confirmed", "awaiting_full_payment", "fully_paid"], "description": "Payment stage" },
+        "arbitrageStatus": { "type": "string", "enum": ["pending", "booked_on_source", "voucher_sent", "cancelled"], "description": "Internal booking status" },
+        "sourcePlatform": { "type": "string", "description": "Platform where the booking will be made" },
+        "cryptoCurrency": { "type": "string", "enum": ["BTC", "ETH", "SOL", "USDC"], "description": "Token used for payment" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Booking timestamp" }
+      },
+      "required": ["userId", "propertyId", "checkIn", "checkOut", "totalAmount", "depositAmount", "paymentStatus", "arbitrageStatus"]
+    },
+    "User": {
+      "title": "User",
+      "description": "User profile information",
+      "type": "object",
+      "properties": {
+        "displayName": { "type": "string", "description": "User's full name" },
+        "email": { "type": "string", "format": "email", "description": "User's email address" },
+        "photoURL": { "type": "string", "format": "uri", "description": "URL to user's profile picture" },
+        "role": { "type": "string", "enum": ["user", "admin"], "description": "User's role in the platform" },
+        "walletAddress": { "type": "string", "description": "Connected Web3 wallet address" }
+      },
+      "required": ["role"]
+    }
+  },
+  "firestore": {
+    "/properties/{propertyId}": {
+      "schema": "Property",
+      "description": "Collection of available properties"
+    },
+    "/bookings/{bookingId}": {
+      "schema": "Booking",
+      "description": "Collection of user bookings"
+    },
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profile documents"
+    },
+    "/ownerProfiles/{userId}": {
+      "schema": "OwnerProfile",
+      "description": "Extended owner profiles"
+    },
+    "/claimRequests/{requestId}": {
+      "schema": "ClaimRequest",
+      "description": "Property claim requests"
+    },
+    "/arbitrageTasks/{taskId}": {
+      "schema": "ArbitrageTask",
+      "description": "Internal arbitrage tasks"
+    }
+  }
+}
