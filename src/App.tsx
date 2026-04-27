@@ -13,6 +13,8 @@ import PrivacyPage from "./pages/PrivacyPage";
 import TermsPage from "./pages/TermsPage";
 import FAQPage from "./pages/FAQPage";
 import TokenPage from "./pages/TokenPage";
+import DestinationsPage from "./pages/DestinationsPage";
+import PropertyDetailPage from "./pages/PropertyDetailPage";
 import { useTranslation } from "react-i18next";
 import { Badge } from "./components/ui/badge";
 import { FirebaseProvider } from "./components/FirebaseProvider";
@@ -247,6 +249,8 @@ export default function App() {
               <Route path="/terms" element={<TermsPage />} />
               <Route path="/faq" element={<FAQPage />} />
               <Route path="/token" element={<TokenPage />} />
+              <Route path="/destinations" element={<DestinationsPage />} />
+              <Route path="/property/:id" element={<PropertyDetailPage />} />
             </Routes>
             <Footer />
           </div>

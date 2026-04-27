@@ -4,6 +4,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, MapPin, Heart } from "lucide-react";
 import { motion } from "motion/react";
+import { useNavigate } from "react-router-dom";
 import BookingModal from "./BookingModal";
 
 interface PropertyCardProps {
@@ -12,13 +13,14 @@ interface PropertyCardProps {
 
 const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <>
       <motion.div
         whileHover={{ y: -8 }}
         transition={{ duration: 0.3 }}
-        onClick={() => setIsBookingOpen(true)}
+        onClick={() => navigate(`/property/${property.id}`)}
       >
         <Card className="overflow-hidden border border-border bg-card shadow-lg rounded-2xl group cursor-pointer h-full flex flex-col hover:border-primary/50 transition-all duration-300">
           <div className="relative aspect-[4/3] overflow-hidden">
