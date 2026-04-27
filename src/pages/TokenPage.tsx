@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Copy, Check, ArrowRight, ArrowLeft, Coins } from 'lucide-react';
 import { cn } from '../lib/utils';
-import { PLATFORM_WALLETS } from '../constants';
+import { getWalletForToken, WalletKey } from '../constants';
 
 // ─── Token Config ────────────────────────────────────────────────
 const TOKEN_NAME = '$H3APP';
@@ -20,18 +20,27 @@ interface PaymentToken {
   name: string;
   chain: string;
   coingeckoId: string;
-  walletKey: 'EVM' | 'BTC' | 'SOL';
+  walletKey: WalletKey;
 }
 
+// Payment tokens — blue-chips, stablecoins & popular memes (whale-friendly, pass-through)
 const PAYMENT_TOKENS: PaymentToken[] = [
-  { symbol: 'SOL', name: 'Solana', chain: 'Solana', coingeckoId: 'solana', walletKey: 'SOL' },
-  { symbol: 'ETH', name: 'Ethereum', chain: 'EVM', coingeckoId: 'ethereum', walletKey: 'EVM' },
-  { symbol: 'BNB', name: 'BNB', chain: 'EVM', coingeckoId: 'binancecoin', walletKey: 'EVM' },
   { symbol: 'BTC', name: 'Bitcoin', chain: 'Bitcoin', coingeckoId: 'bitcoin', walletKey: 'BTC' },
+  { symbol: 'ETH', name: 'Ethereum', chain: 'EVM', coingeckoId: 'ethereum', walletKey: 'EVM' },
+  { symbol: 'SOL', name: 'Solana', chain: 'Solana', coingeckoId: 'solana', walletKey: 'SOL' },
   { symbol: 'USDT', name: 'Tether', chain: 'EVM', coingeckoId: 'tether', walletKey: 'EVM' },
   { symbol: 'USDC', name: 'USD Coin', chain: 'EVM', coingeckoId: 'usd-coin', walletKey: 'EVM' },
-  { symbol: 'MATIC', name: 'Polygon', chain: 'EVM', coingeckoId: 'matic-network', walletKey: 'EVM' },
+  { symbol: 'BNB', name: 'BNB Chain', chain: 'EVM', coingeckoId: 'binancecoin', walletKey: 'EVM' },
   { symbol: 'AVAX', name: 'Avalanche', chain: 'EVM', coingeckoId: 'avalanche-2', walletKey: 'EVM' },
+  { symbol: 'MATIC', name: 'Polygon', chain: 'EVM', coingeckoId: 'matic-network', walletKey: 'EVM' },
+  { symbol: 'SUI', name: 'Sui', chain: 'SUI', coingeckoId: 'sui', walletKey: 'SUI' },
+  { symbol: 'ARB', name: 'Arbitrum', chain: 'EVM', coingeckoId: 'arbitrum', walletKey: 'EVM' },
+  { symbol: 'LINK', name: 'Chainlink', chain: 'EVM', coingeckoId: 'chainlink', walletKey: 'EVM' },
+  { symbol: 'DAI', name: 'Dai', chain: 'EVM', coingeckoId: 'dai', walletKey: 'EVM' },
+  { symbol: 'PEPE', name: 'Pepe', chain: 'EVM', coingeckoId: 'pepe', walletKey: 'EVM' },
+  { symbol: 'SHIB', name: 'Shiba Inu', chain: 'EVM', coingeckoId: 'shiba-inu', walletKey: 'EVM' },
+  { symbol: 'BONK', name: 'Bonk', chain: 'Solana', coingeckoId: 'bonk', walletKey: 'SOL' },
+  { symbol: 'WIF', name: 'dogwifhat', chain: 'Solana', coingeckoId: 'dogwifcoin', walletKey: 'SOL' },
 ];
 
 // ─── Price Fetching (Multi-Provider Cascade) ─────────────────────
@@ -106,7 +115,7 @@ function BuyWidget() {
 
   useEffect(() => { loadPrice(); }, [loadPrice]);
 
-  const walletAddress = PLATFORM_WALLETS.DEPOSIT[selectedToken.walletKey];
+  const walletAddress = getWalletForToken(selectedToken.symbol, selectedToken.walletKey);
   const cryptoAmount = effectiveUsd > 0 && tokenPrice > 0 ? effectiveUsd / tokenPrice : 0;
 
   const handleCopy = () => {
@@ -164,7 +173,7 @@ function BuyWidget() {
       {/* Token Selector */}
       <div>
         <label className="text-xs text-muted-foreground uppercase tracking-widest mb-2 block">Pay with</label>
-        <div className="grid grid-cols-4 gap-2">
+        <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
           {PAYMENT_TOKENS.map(t => (
             <button
               key={t.symbol}

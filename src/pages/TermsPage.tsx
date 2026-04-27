@@ -26,23 +26,36 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-2xl font-serif mb-4 gold-text">2. Service Model</h2>
-            <h3 className="text-lg font-serif mb-2">2.1 Zero Custody</h3>
+            <h3 className="text-lg font-serif mb-2">2.1 Zero Custody Intermediation</h3>
             <p className="mb-4">
-              house3.app operates under a "Zero Custody" model. We do not hold, store, or manage
-              cryptocurrency funds beyond the 10% markup deposit. The remaining 90% of the booking
-              value is settled directly between the guest and the property platform via P2P.
+              house3.app operates as a silent, seamless luxury intermediary. We exclusively
+              partner with property platforms that already accept cryptocurrency payments.
+              We never hold, store, or manage guest funds beyond the 10% pre-reservation
+              deposit (our markup). The remaining 90% is paid directly by the guest to the
+              source platform — we facilitate, not custody.
             </p>
-            <h3 className="text-lg font-serif mb-2">2.2 Markup Fee</h3>
+            <h3 className="text-lg font-serif mb-2">2.2 Sourced Properties (Platform Partners)</h3>
             <p className="mb-4">
-              Our business model is based on a 10% markup on the total property value. This markup
-              covers: property curation, availability verification, concierge services, blockchain
-              payment infrastructure, and booking coordination.
+              For properties sourced from crypto-native partner platforms: our revenue is the
+              10% pre-reservation deposit. Upon receiving your deposit and confirmation email,
+              we immediately book on the source platform. You then receive a second email with
+              the remaining payment details (wallet address or QR code) to send the 90% directly
+              to the source platform. Calendar and reservation sync is automatic.
             </p>
-            <h3 className="text-lg font-serif mb-2">2.3 Source Platforms</h3>
+            <h3 className="text-lg font-serif mb-2">2.3 Owner-Listed Properties (Direct)</h3>
+            <p className="mb-4">
+              Property owners may list directly on house3.app. In this case, we charge a 20%
+              administration fee per rental — covering full property management, guest relations,
+              booking coordination, and on-ground services via our global network of specialized
+              third-party providers. The 10% guest markup still applies on the total rental price.
+              Owners enjoy zero stress: we handle everything regardless of city or country.
+            </p>
+            <h3 className="text-lg font-serif mb-2">2.4 Multi-Chain Payments</h3>
             <p>
-              Properties listed on house3.app are sourced from premium third-party platforms
-              (JamesEdition, Luxury Retreats, and others). Availability, pricing, and cancellation
-              policies are ultimately governed by the source platform's terms.
+              We receive on all chains supported by our partner platforms. This ensures seamless
+              pass-through: guest pays in crypto → we book in crypto on the source platform.
+              Supported networks include Ethereum, Solana, Bitcoin, BNB Chain, Polygon, and
+              Avalanche, with USDC/USDT stablecoins on all EVM chains.
             </p>
           </section>
 
@@ -70,12 +83,21 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-2xl font-serif mb-4 gold-text">4. Booking Process</h2>
+            <h3 className="text-lg font-serif mb-2">Sourced Properties</h3>
+            <ol className="list-decimal list-inside space-y-3 ml-4 mb-6">
+              <li><strong>Selection:</strong> Choose your luxury property and dates on house3.app</li>
+              <li><strong>Pre-Reservation (10%):</strong> Send 10% deposit in your chosen cryptocurrency to house3.app wallet</li>
+              <li><strong>Confirmation:</strong> You receive an email confirming your pre-reservation</li>
+              <li><strong>Platform Booking:</strong> We immediately reserve the property on the source platform</li>
+              <li><strong>Final Payment (90%):</strong> You receive a second email with the source platform's wallet address or QR code — send remaining 90% directly to them</li>
+              <li><strong>Voucher:</strong> Receive official voucher and check-in instructions from the source platform</li>
+            </ol>
+            <h3 className="text-lg font-serif mb-2">Owner-Listed Properties</h3>
             <ol className="list-decimal list-inside space-y-3 ml-4">
-              <li><strong>Selection:</strong> Choose your luxury property and dates</li>
-              <li><strong>Deposit:</strong> Pay 10% markup in your chosen cryptocurrency to house3.app wallet</li>
-              <li><strong>Verification:</strong> Our concierge confirms availability on the source platform</li>
-              <li><strong>Full Payment:</strong> Send remaining 90% directly to the property platform (P2P)</li>
-              <li><strong>Confirmation:</strong> Receive official voucher and check-in instructions</li>
+              <li><strong>Selection:</strong> Choose property and dates</li>
+              <li><strong>Full Payment:</strong> Send total rental amount to house3.app wallet (includes 10% markup)</li>
+              <li><strong>Confirmation:</strong> We coordinate with the owner and our service network</li>
+              <li><strong>Voucher & Access:</strong> Receive booking confirmation with all access details</li>
             </ol>
           </section>
 

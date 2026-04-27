@@ -53,15 +53,15 @@ const resources = {
       "how_it_works": {
         "badge": "Exclusive Process",
         "title": "How to Book with Crypto",
-        "subtitle": "We combine blockchain security with curation from the world's best luxury platforms.",
-        "step1_title": "Choice & Deposit",
-        "step1_desc": "Select your property and make a 10% deposit (house3 Markup) via BTC, ETH, SOL, or USDC.",
-        "step2_title": "Immediate Block",
-        "step2_desc": "Our concierge validates availability and blocks the property on the source platform in real-time.",
-        "step3_title": "Final Payment",
-        "step3_desc": "After confirmation, you send the remaining 90%. We guarantee P2P settlement with the owner.",
+        "subtitle": "Silent intermediation with crypto-native luxury platforms. Zero custody, zero bureaucracy.",
+        "step1_title": "Choose & Deposit 10%",
+        "step1_desc": "Select your property and send the 10% pre-reservation deposit via BTC, ETH, SOL, or USDC to our wallet.",
+        "step2_title": "We Book Instantly",
+        "step2_desc": "Upon receiving your deposit, we immediately reserve the property on the source platform using crypto.",
+        "step3_title": "Pay 90% Direct",
+        "step3_desc": "You receive a second email with the source platform's wallet/QR code. Send remaining 90% directly to them.",
         "step4_title": "Voucher & Check-in",
-        "step4_desc": "You receive the official voucher from the source platform and all VIP access instructions."
+        "step4_desc": "Receive the official voucher from the source platform with all VIP access instructions. Enjoy."
       },
       "concierge_section": {
         "badge": "house3 Concierge",
@@ -162,15 +162,15 @@ const resources = {
       "how_it_works": {
         "badge": "Processo Exclusivo",
         "title": "Como Reservar com Cripto",
-        "subtitle": "Unimos a segurança da blockchain com a curadoria das melhores plataformas de luxo do mundo.",
-        "step1_title": "Escolha e Depósito",
-        "step1_desc": "Selecione seu imóvel e realize o depósito de 10% (Markup house3) via BTC, ETH, SOL ou USDC.",
-        "step2_title": "Bloqueio Imediato",
-        "step2_desc": "Nosso concierge valida a disponibilidade e bloqueia o imóvel na plataforma de origem em tempo real.",
-        "step3_title": "Pagamento Final",
-        "step3_desc": "Após a confirmação, você envia os 90% restantes. Garantimos a liquidação P2P com o proprietário.",
+        "subtitle": "Intermediação silenciosa com plataformas de luxo crypto-native. Zero custódia, zero burocracia.",
+        "step1_title": "Escolha e Depósito 10%",
+        "step1_desc": "Selecione seu imóvel e envie o depósito de 10% de pré-reserva via BTC, ETH, SOL ou USDC para nossa carteira.",
+        "step2_title": "Reservamos Instantaneamente",
+        "step2_desc": "Ao receber seu depósito, reservamos imediatamente o imóvel na plataforma originária usando crypto.",
+        "step3_title": "Pague 90% Direto",
+        "step3_desc": "Você recebe um segundo email com a carteira/QR code da plataforma origem. Envie os 90% restantes diretamente.",
         "step4_title": "Voucher & Check-in",
-        "step4_desc": "Você recebe o voucher oficial da plataforma originária e todas as instruções de acesso VIP."
+        "step4_desc": "Receba o voucher oficial da plataforma originária com todas as instruções de acesso VIP. Aproveite."
       },
       "concierge_section": {
         "badge": "house3 Concierge",

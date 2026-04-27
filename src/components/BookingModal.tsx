@@ -13,7 +13,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { useTranslation } from "react-i18next";
 import { getCryptoPrice } from "@/services/priceService";
 import { orchestrateAI } from "@/services/aiService";
-import { PLATFORM_WALLETS } from "../constants";
+import { getWalletForToken, WalletKey } from "../constants";
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db, handleFirestoreError, OperationType } from '../firebase';
 
@@ -135,9 +135,8 @@ export default function BookingModal({ property, isOpen, onClose }: BookingModal
   };
 
   const getWalletAddress = () => {
-    if (selectedCrypto === 'BTC') return PLATFORM_WALLETS.DEPOSIT.BTC;
-    if (selectedCrypto === 'SOL') return PLATFORM_WALLETS.DEPOSIT.SOL;
-    return PLATFORM_WALLETS.DEPOSIT.EVM;
+    const chain: WalletKey = selectedCrypto === 'BTC' ? 'BTC' : selectedCrypto === 'SOL' ? 'SOL' : 'EVM';
+    return getWalletForToken(selectedCrypto, chain);
   };
 
   const renderStep = () => {

@@ -37,12 +37,12 @@ const faqData: FAQItem[] = [
   {
     category: 'Payments',
     question: 'How does the payment process work?',
-    answer: 'Booking follows a 4-step process: (1) Select property and dates, (2) Pay 10% deposit to house3.app wallet in your chosen crypto, (3) Our concierge confirms availability and blocks the property, (4) You send the remaining 90% directly to the source platform (P2P). You receive an official voucher upon completion.'
+    answer: 'For sourced properties: (1) Select property and dates, (2) Send 10% pre-reservation deposit to house3.app wallet, (3) We instantly book on the source platform, (4) You receive a second email with the source platform\'s wallet/QR code to send the remaining 90% directly to them. For owner-listed properties: full payment is sent to house3.app, and we handle everything.'
   },
   {
     category: 'Payments',
     question: 'What is the 10% markup?',
-    answer: 'The 10% markup is our service fee covering: property curation and verification, real-time availability checking, blockchain payment infrastructure, AI concierge assistance, booking coordination with source platforms, and 24/7 guest support. There are no additional hidden fees or subscriptions.'
+    answer: 'The 10% is our service fee and equals the pre-reservation deposit. It covers: property curation, instant booking on source platforms, calendar/reservation sync, concierge assistance, and blockchain infrastructure. For sourced properties, this is the ONLY amount that passes through house3.app — the 90% goes directly to the source platform. Zero custody, zero bureaucracy.'
   },
   {
     category: 'Payments',
@@ -62,7 +62,7 @@ const faqData: FAQItem[] = [
   {
     category: 'Booking',
     question: 'What is the "Zero Custody" model?',
-    answer: 'house3.app never holds or manages the full booking amount. We only receive the 10% markup deposit. The remaining 90% is settled directly between you and the property platform. This eliminates custodial risk and ensures your funds are never pooled or locked in our systems.'
+    answer: 'For sourced properties, house3.app only receives the 10% pre-reservation deposit (our markup). The remaining 90% goes directly from you to the source platform — we never touch it. You receive the source platform\'s wallet address in a second confirmation email. This eliminates custodial risk entirely.'
   },
   {
     category: 'Booking',
