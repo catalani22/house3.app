@@ -17,7 +17,13 @@ import { useTranslation } from "react-i18next";
 import { Badge } from "./components/ui/badge";
 import { FirebaseProvider } from "./components/FirebaseProvider";
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  React.useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+}
 
 interface ErrorBoundaryProps {
   children: React.ReactNode;
@@ -41,12 +47,12 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
   render() {
     const { hasError, error } = this.state;
     if (hasError) {
-      let errorMessage = "Ocorreu um erro inesperado.";
+      let errorMessage = "An unexpected error occurred.";
       try {
         const parsed = JSON.parse(error.message);
-        if (parsed.error) errorMessage = `Erro de Banco de Dados: ${parsed.error}`;
+        if (parsed.error) errorMessage = `Database Error: ${parsed.error}`;
       } catch (e) {
-        errorMessage = error?.message || "Erro desconhecido";
+        errorMessage = error?.message || "Unknown error";
       }
 
       return (
@@ -55,13 +61,13 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
             <div className="w-20 h-20 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto">
               <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
             </div>
-            <h2 className="text-2xl font-bold text-gray-900">Ops! Algo deu errado</h2>
+            <h2 className="text-2xl font-bold text-gray-900">Oops! Something went wrong</h2>
             <p className="text-gray-600">{errorMessage}</p>
             <button 
               onClick={() => window.location.reload()}
               className="w-full py-3 bg-primary text-white rounded-full font-bold hover:bg-primary/90 transition-colors"
             >
-              Tentar novamente
+              Try again
             </button>
           </div>
         </div>
@@ -93,11 +99,11 @@ function Home() {
       <PropertyGrid />
       
       {/* How it Works Section */}
-      <section className="py-24 bg-muted/30">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center mb-16 space-y-4">
+      <section className="py-16 sm:py-24 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-4xl mx-auto text-center mb-12 sm:mb-16 space-y-4">
             <Badge variant="outline" className="border-primary/30 text-primary">{t('how_it_works.badge')}</Badge>
-            <h2 className="text-4xl md:text-5xl font-serif">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif">
               {t('how_it_works.title').split(' ').slice(0, -1).join(' ')} <span className="gold-text">{t('how_it_works.title').split(' ').slice(-1)}</span>
             </h2>
             <p className="text-muted-foreground font-light">
@@ -105,9 +111,9 @@ function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 relative">
             {/* Connector Line (Desktop) */}
-            <div className="hidden md:block absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent -translate-y-1/2" />
+            <div className="hidden lg:block absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent -translate-y-1/2" />
             
             {[
               {
@@ -144,12 +150,12 @@ function Home() {
       </section>
 
       {/* house3 Concierge Section */}
-      <section className="py-24 bg-card overflow-hidden border-y border-border">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col lg:flex-row items-center gap-20">
+      <section className="py-16 sm:py-24 bg-card overflow-hidden border-y border-border">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             <div className="flex-1 space-y-8">
               <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border border-primary/20 px-4 py-1 uppercase tracking-widest text-[10px] font-bold">{t('concierge_section.badge')}</Badge>
-              <h2 className="text-4xl md:text-7xl font-serif tracking-tight leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-serif tracking-tight leading-tight">
                 {t('concierge_section.title').split(',')[0]}, <br />
                 <span className="gold-text">{t('concierge_section.title').split(',')[1]}</span>
               </h2>
@@ -193,29 +199,29 @@ function Home() {
       </section>
 
       {/* Why house3 Section */}
-      <section className="py-32 bg-background">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-20 space-y-4">
-            <h2 className="text-4xl md:text-6xl font-serif">{t('why_house_bz.title').split(' ')[0]} <span className="gold-text">{t('why_house_bz.title').split(' ').slice(1).join(' ')}</span></h2>
+      <section className="py-20 sm:py-32 bg-background">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-20 space-y-4">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif">{t('why_house_bz.title').split(' ')[0]} <span className="gold-text">{t('why_house_bz.title').split(' ').slice(1).join(' ')}</span></h2>
             <p className="text-muted-foreground max-w-2xl mx-auto font-light">
               {t('why_house_bz.subtitle')}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="bg-card p-10 rounded-3xl border border-border hover:border-primary/30 transition-all group">
-              <div className="w-14 h-14 bg-muted rounded-2xl flex items-center justify-center mb-8 text-primary font-serif text-2xl group-hover:bg-primary group-hover:text-primary-foreground transition-colors">01</div>
-              <h3 className="text-2xl font-serif mb-4">{t('why_house_bz.feature1_title')}</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-12">
+            <div className="bg-card p-8 sm:p-10 rounded-3xl border border-border hover:border-primary/30 transition-all group">
+              <div className="w-14 h-14 bg-muted rounded-2xl flex items-center justify-center mb-6 sm:mb-8 text-primary font-serif text-2xl group-hover:bg-primary group-hover:text-primary-foreground transition-colors">01</div>
+              <h3 className="text-xl sm:text-2xl font-serif mb-4">{t('why_house_bz.feature1_title')}</h3>
               <p className="text-muted-foreground font-light leading-relaxed">{t('why_house_bz.feature1_desc')}</p>
             </div>
-            <div className="bg-card p-10 rounded-3xl border border-border hover:border-primary/30 transition-all group">
-              <div className="w-14 h-14 bg-muted rounded-2xl flex items-center justify-center mb-8 text-primary font-serif text-2xl group-hover:bg-primary group-hover:text-primary-foreground transition-colors">02</div>
-              <h3 className="text-2xl font-serif mb-4">{t('why_house_bz.feature2_title')}</h3>
+            <div className="bg-card p-8 sm:p-10 rounded-3xl border border-border hover:border-primary/30 transition-all group">
+              <div className="w-14 h-14 bg-muted rounded-2xl flex items-center justify-center mb-6 sm:mb-8 text-primary font-serif text-2xl group-hover:bg-primary group-hover:text-primary-foreground transition-colors">02</div>
+              <h3 className="text-xl sm:text-2xl font-serif mb-4">{t('why_house_bz.feature2_title')}</h3>
               <p className="text-muted-foreground font-light leading-relaxed">{t('why_house_bz.feature2_desc')}</p>
             </div>
-            <div className="bg-card p-10 rounded-3xl border border-border hover:border-primary/30 transition-all group">
-              <div className="w-14 h-14 bg-muted rounded-2xl flex items-center justify-center mb-8 text-primary font-serif text-2xl group-hover:bg-primary group-hover:text-primary-foreground transition-colors">03</div>
-              <h3 className="text-2xl font-serif mb-4">{t('why_house_bz.feature3_title')}</h3>
+            <div className="bg-card p-8 sm:p-10 rounded-3xl border border-border hover:border-primary/30 transition-all group sm:col-span-2 lg:col-span-1">
+              <div className="w-14 h-14 bg-muted rounded-2xl flex items-center justify-center mb-6 sm:mb-8 text-primary font-serif text-2xl group-hover:bg-primary group-hover:text-primary-foreground transition-colors">03</div>
+              <h3 className="text-xl sm:text-2xl font-serif mb-4">{t('why_house_bz.feature3_title')}</h3>
               <p className="text-muted-foreground font-light leading-relaxed">{t('why_house_bz.feature3_desc')}</p>
             </div>
           </div>
@@ -230,6 +236,7 @@ export default function App() {
     <ErrorBoundary>
       <FirebaseProvider>
         <Router>
+          <ScrollToTop />
           <div className="min-h-screen bg-background text-foreground">
             <Navbar />
             <Routes>

@@ -158,11 +158,11 @@ export default function Navbar() {
                 <DropdownMenuSeparator className="bg-border" />
                 <DropdownMenuItem className="cursor-pointer focus:bg-primary/10 focus:text-primary" onClick={() => navigate('/owner')}>
                   <LayoutDashboard className="mr-2 h-4 w-4" />
-                  <span>Dashboard do Proprietário</span>
+                  <span>Owner Dashboard</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="cursor-pointer focus:bg-primary/10 focus:text-primary">
                   <User className="mr-2 h-4 w-4" />
-                  <span>Minhas Reservas</span>
+                  <span>My Bookings</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="cursor-pointer focus:bg-primary/10 focus:text-primary" onClick={() => logout()}>
                   <LogOut className="mr-2 h-4 w-4" />

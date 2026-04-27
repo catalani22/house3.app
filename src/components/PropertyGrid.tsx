@@ -56,24 +56,24 @@ export default function PropertyGrid() {
     : properties.filter(p => p.category.toLowerCase() === activeTab.toLowerCase());
 
   return (
-    <section className="py-20 container mx-auto px-6">
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+    <section className="py-16 sm:py-20 container mx-auto px-4 sm:px-6">
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-12 gap-6">
         <div>
-          <h2 className="text-3xl md:text-4xl font-serif mb-4">
+          <h2 className="text-3xl md:text-4xl font-serif mb-3">
             {t('grid.title').split(' ').slice(0, -1).join(' ')} <span className="gold-text">{t('grid.title').split(' ').slice(-1)}</span>
           </h2>
-          <p className="text-muted-foreground max-w-xl">
+          <p className="text-muted-foreground max-w-xl font-light">
             {t('grid.subtitle')}
           </p>
         </div>
 
         <Tabs defaultValue="all" className="w-full md:w-auto" onValueChange={setActiveTab}>
-          <TabsList className="bg-muted p-1 rounded-full h-12 border border-border">
-            <TabsTrigger value="all" className="rounded-full px-6 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-bold">{t('categories.all')}</TabsTrigger>
-            <TabsTrigger value="villa" className="rounded-full px-6 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-bold">{t('categories.villa')}</TabsTrigger>
-            <TabsTrigger value="beach house" className="rounded-full px-6 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-bold">{t('categories.beach')}</TabsTrigger>
-            <TabsTrigger value="mansion" className="rounded-full px-6 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-bold">{t('categories.mansion')}</TabsTrigger>
-            <TabsTrigger value="luxury apartment" className="rounded-full px-6 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-bold">{t('categories.apartment')}</TabsTrigger>
+          <TabsList className="bg-muted p-1 rounded-full h-12 border border-border overflow-x-auto flex w-full md:w-auto no-scrollbar">
+            <TabsTrigger value="all" className="rounded-full px-4 sm:px-6 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-bold whitespace-nowrap text-xs sm:text-sm">{t('categories.all')}</TabsTrigger>
+            <TabsTrigger value="villa" className="rounded-full px-4 sm:px-6 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-bold whitespace-nowrap text-xs sm:text-sm">{t('categories.villa')}</TabsTrigger>
+            <TabsTrigger value="beach house" className="rounded-full px-4 sm:px-6 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-bold whitespace-nowrap text-xs sm:text-sm">{t('categories.beach')}</TabsTrigger>
+            <TabsTrigger value="mansion" className="rounded-full px-4 sm:px-6 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-bold whitespace-nowrap text-xs sm:text-sm">{t('categories.mansion')}</TabsTrigger>
+            <TabsTrigger value="luxury apartment" className="rounded-full px-4 sm:px-6 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground font-bold whitespace-nowrap text-xs sm:text-sm">{t('categories.apartment')}</TabsTrigger>
           </TabsList>
         </Tabs>
       </div>

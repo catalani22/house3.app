@@ -70,3 +70,11 @@
 .animate-marquee {
   animation: marquee 20s linear infinite;
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

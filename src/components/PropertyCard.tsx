@@ -81,7 +81,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
           
           <CardContent className="p-5 pt-0 flex items-center justify-between border-t border-border mt-auto">
             <div>
-              <span className="text-[10px] text-muted-foreground uppercase tracking-wider block mb-1">Diária</span>
+              <span className="text-[10px] text-muted-foreground uppercase tracking-wider block mb-1">Per Night</span>
               <span className="text-xl font-serif text-foreground">
                 $ {property.price.toLocaleString('en-US')}
                 <span className="text-xs font-sans font-normal text-muted-foreground ml-1">USD</span>

@@ -110,8 +110,8 @@ export default function OwnerDashboard() {
     return (
       <div className="flex flex-col items-center justify-center min-h-[60vh] text-center p-6">
         <AlertCircle className="w-16 h-16 text-yellow-500 mb-4" />
-        <h2 className="text-2xl font-serif mb-2">Acesso Restrito</h2>
-        <p className="text-muted-foreground mb-6">Por favor, faça login para acessar o Dashboard do Proprietário.</p>
+        <h2 className="text-2xl font-serif mb-2">Restricted Access</h2>
+        <p className="text-muted-foreground mb-6">Please sign in to access the Owner Dashboard.</p>
       </div>
     );
   }

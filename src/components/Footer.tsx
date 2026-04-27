@@ -36,9 +36,9 @@ export default function Footer() {
           <div>
             <h4 className="font-serif text-lg mb-6 gold-text">{t('footer.collections')}</h4>
             <ul className="space-y-4 text-muted-foreground text-sm font-light">
-              <li><a href="#" className="hover:text-primary transition-colors">Villas Exclusivas</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Mansões Históricas</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Coberturas Premium</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Exclusive Villas</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Historic Mansions</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Premium Penthouses</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Beach Houses</a></li>
             </ul>
           </div>
