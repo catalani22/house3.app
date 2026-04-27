@@ -41,7 +41,7 @@ const resources = {
         "subtitle": "Exclusive curation of the world's most luxurious properties. Live unique experiences with simplified cryptocurrency payments."
       },
       "footer": {
-        "description": "The new era of luxury living. House BZ redefines exclusivity through extraordinary properties and decentralized payments.",
+        "description": "The new era of luxury living. house3 redefines exclusivity through extraordinary properties and decentralized payments.",
         "collections": "Collections",
         "ecosystem": "Ecosystem",
         "privacy": "Privacy",
@@ -55,7 +55,7 @@ const resources = {
         "title": "How to Book with Crypto",
         "subtitle": "We combine blockchain security with curation from the world's best luxury platforms.",
         "step1_title": "Choice & Deposit",
-        "step1_desc": "Select your property and make a 10% deposit (House BZ Markup) via BTC, ETH, SOL, or USDC.",
+        "step1_desc": "Select your property and make a 10% deposit (house3 Markup) via BTC, ETH, SOL, or USDC.",
         "step2_title": "Immediate Block",
         "step2_desc": "Our concierge validates availability and blocks the property on the source platform in real-time.",
         "step3_title": "Final Payment",
@@ -64,7 +64,7 @@ const resources = {
         "step4_desc": "You receive the official voucher from the source platform and all VIP access instructions."
       },
       "concierge_section": {
-        "badge": "House BZ Concierge",
+        "badge": "house3 Concierge",
         "title": "Your Stay, Elevated to the Max.",
         "subtitle": "Our dedicated concierge team is available 24/7 to ensure every detail of your stay is impeccable. From private chefs to helicopter transfers, the extraordinary is our standard.",
         "vip_access": "VIP Access",
@@ -73,7 +73,7 @@ const resources = {
         "crypto_networks": "BTC • ETH • SOL"
       },
       "why_house_bz": {
-        "title": "Why House BZ?",
+        "title": "Why house3?",
         "subtitle": "Redefining the luxury real estate market through decentralization and exclusivity.",
         "feature1_title": "Absolute Privacy",
         "feature1_desc": "Secure and discrete transactions via blockchain, ensuring total anonymity and data protection for our members.",
@@ -96,7 +96,7 @@ const resources = {
           "desc": "Define how you want to receive the 90% of the booking value (P2P).",
           "wallet_label": "Wallet Address (EVM/Solana)",
           "token_label": "Preferred Token",
-          "terms_label": "I accept the \"Zero Custody\" terms of House BZ. I understand that the platform acts only as a technological intermediary, capturing a 10% fee, and that the receipt of the remaining 90% is my direct responsibility via P2P.",
+          "terms_label": "I accept the \"Zero Custody\" terms of house3. I understand that the platform acts only as a technological intermediary, capturing a 10% fee, and that the receipt of the remaining 90% is my direct responsibility via P2P.",
           "save_button": "Save Settings"
         }
       },
@@ -150,7 +150,7 @@ const resources = {
         "subtitle": "Curadoria exclusiva das propriedades mais luxuosas do mundo. Viva experiências únicas com pagamento simplificado em criptomoedas."
       },
       "footer": {
-        "description": "A nova era do morar de luxo. House BZ redefine a exclusividade através de propriedades extraordinárias e pagamentos descentralizados.",
+        "description": "A nova era do morar de luxo. house3 redefine a exclusividade através de propriedades extraordinárias e pagamentos descentralizados.",
         "collections": "Coleções",
         "ecosystem": "Ecossistema",
         "privacy": "Privacidade",
@@ -164,7 +164,7 @@ const resources = {
         "title": "Como Reservar com Cripto",
         "subtitle": "Unimos a segurança da blockchain com a curadoria das melhores plataformas de luxo do mundo.",
         "step1_title": "Escolha e Depósito",
-        "step1_desc": "Selecione seu imóvel e realize o depósito de 10% (Markup House BZ) via BTC, ETH, SOL ou USDC.",
+        "step1_desc": "Selecione seu imóvel e realize o depósito de 10% (Markup house3) via BTC, ETH, SOL ou USDC.",
         "step2_title": "Bloqueio Imediato",
         "step2_desc": "Nosso concierge valida a disponibilidade e bloqueia o imóvel na plataforma de origem em tempo real.",
         "step3_title": "Pagamento Final",
@@ -173,7 +173,7 @@ const resources = {
         "step4_desc": "Você recebe o voucher oficial da plataforma originária e todas as instruções de acesso VIP."
       },
       "concierge_section": {
-        "badge": "House BZ Concierge",
+        "badge": "house3 Concierge",
         "title": "Sua Estadia, Elevada ao Máximo.",
         "subtitle": "Nossa equipe de concierge dedicada está disponível 24/7 para garantir que cada detalhe da sua estadia seja impecável. De chefs privados a traslados de helicóptero, o extraordinário é o nosso padrão.",
         "vip_access": "Acesso VIP",
@@ -182,7 +182,7 @@ const resources = {
         "crypto_networks": "BTC • ETH • SOL"
       },
       "why_house_bz": {
-        "title": "Por que House BZ?",
+        "title": "Por que house3?",
         "subtitle": "Redefinindo o mercado imobiliário de luxo através da descentralização e exclusividade.",
         "feature1_title": "Privacidade Absoluta",
         "feature1_desc": "Transações seguras e discretas via blockchain, garantindo total anonimato e proteção de dados para nossos membros.",
@@ -205,7 +205,7 @@ const resources = {
           "desc": "Defina como você deseja receber os 90% do valor das reservas (P2P).",
           "wallet_label": "Endereço da Carteira (EVM/Solana)",
           "token_label": "Token de Preferência",
-          "terms_label": "Aceito os termos de \"Zero Custody\" da House BZ. Compreendo que a plataforma atua apenas como intermediária tecnológica, capturando 10% de taxa, e que o recebimento dos 90% restantes é de minha responsabilidade direta via P2P.",
+          "terms_label": "Aceito os termos de \"Zero Custody\" da house3. Compreendo que a plataforma atua apenas como intermediária tecnológica, capturando 10% de taxa, e que o recebimento dos 90% restantes é de minha responsabilidade direta via P2P.",
           "save_button": "Salvar Configurações"
         }
       },

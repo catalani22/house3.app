@@ -19,7 +19,7 @@ import {
 import React from 'react';
 
 const config = getDefaultConfig({
-  appName: 'House BZ',
+  appName: 'house3.app',
   projectId: 'YOUR_PROJECT_ID', // Platform will prompt for this if needed, or use a default
   chains: [mainnet, polygon, optimism, arbitrum, base],
   ssr: true, // If your dApp uses server side rendering (SSR)

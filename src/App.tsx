@@ -9,6 +9,10 @@ import PropertyGrid from "./components/PropertyGrid";
 import Footer from "./components/Footer";
 import OwnerDashboard from "./components/OwnerDashboard";
 import AdminDashboard from "./components/AdminDashboard";
+import PrivacyPage from "./pages/PrivacyPage";
+import TermsPage from "./pages/TermsPage";
+import FAQPage from "./pages/FAQPage";
+import TokenPage from "./pages/TokenPage";
 import { useTranslation } from "react-i18next";
 import { Badge } from "./components/ui/badge";
 import { FirebaseProvider } from "./components/FirebaseProvider";
@@ -74,6 +78,18 @@ function Home() {
   return (
     <main>
       <Hero />
+      
+      {/* LED Marquee */}
+      <div className="w-full overflow-hidden bg-black border-y border-primary/30 py-2.5">
+        <div className="animate-marquee whitespace-nowrap flex">
+          {[...Array(4)].map((_, i) => (
+            <span key={i} className="text-primary font-mono text-xs tracking-widest mx-8">
+              $H3APP TOKEN · PRE SALE LIVE · LUXURY WEB3 HOSPITALITY · BOOK WITH CRYPTO · ZERO CUSTODY · 
+            </span>
+          ))}
+        </div>
+      </div>
+
       <PropertyGrid />
       
       {/* How it Works Section */}
@@ -127,7 +143,7 @@ function Home() {
         </div>
       </section>
 
-      {/* House BZ Concierge Section */}
+      {/* house3 Concierge Section */}
       <section className="py-24 bg-card overflow-hidden border-y border-border">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-20">
@@ -166,7 +182,7 @@ function Home() {
               <div className="gold-border p-2 rounded-[3rem]">
                 <img 
                   src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800" 
-                  alt="House BZ App" 
+                  alt="house3 App" 
                   className="rounded-[2.5rem] shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
                   referrerPolicy="no-referrer"
                 />
@@ -176,7 +192,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Why House BZ Section */}
+      {/* Why house3 Section */}
       <section className="py-32 bg-background">
         <div className="container mx-auto px-6">
           <div className="text-center mb-20 space-y-4">
@@ -220,6 +236,10 @@ export default function App() {
               <Route path="/" element={<Home />} />
               <Route path="/owner" element={<OwnerDashboard />} />
               <Route path="/admin" element={<AdminDashboard />} />
+              <Route path="/privacy" element={<PrivacyPage />} />
+              <Route path="/terms" element={<TermsPage />} />
+              <Route path="/faq" element={<FAQPage />} />
+              <Route path="/token" element={<TokenPage />} />
             </Routes>
             <Footer />
           </div>

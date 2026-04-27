@@ -73,7 +73,7 @@ export default function BookingModal({ property, isOpen, onClose }: BookingModal
       if (isOpen && step === 1) {
         const tip = await orchestrateAI(
           `Give a short, 1-sentence luxury concierge tip for someone staying at a ${property.category} in ${property.location}.`,
-          "You are a world-class luxury concierge for House BZ."
+          "You are a world-class luxury concierge for house3.app."
         );
         setConciergeTip(tip);
       }
@@ -273,8 +273,8 @@ export default function BookingModal({ property, isOpen, onClose }: BookingModal
               <div className="pt-3 border-t border-yellow-500/10">
                 <p className="text-[9px] text-muted-foreground leading-tight italic">
                   {i18n.language.startsWith('pt')
-                    ? `Ao confirmar, você aceita os termos de uso da House BZ e declara estar ciente de que esta reserva será processada na plataforma originária (${property.sourcePlatform || 'JamesEdition'}), aceitando também seus respectivos termos e políticas de cancelamento.`
-                    : `By confirming, you accept House BZ's terms of use and declare you are aware that this reservation will be processed on the source platform (${property.sourcePlatform || 'JamesEdition'}), also accepting their respective terms and cancellation policies.`}
+                    ? `Ao confirmar, você aceita os termos de uso da house3.app e declara estar ciente de que esta reserva será processada na plataforma originária (${property.sourcePlatform || 'JamesEdition'}), aceitando também seus respectivos termos e políticas de cancelamento.`
+                    : `By confirming, you accept house3.app's terms of use and declare you are aware that this reservation will be processed on the source platform (${property.sourcePlatform || 'JamesEdition'}), also accepting their respective terms and cancellation policies.`}
                 </p>
               </div>
             </div>

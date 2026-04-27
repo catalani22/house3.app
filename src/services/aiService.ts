@@ -39,7 +39,7 @@ export async function orchestrateAI(prompt: string, systemPrompt?: string) {
       console.log("Attempting AI generation with Groq...");
       const completion = await groq.chat.completions.create({
         messages: [
-          { role: "system", content: systemPrompt || "You are a luxury real estate concierge for House BZ." },
+          { role: "system", content: systemPrompt || "You are a luxury real estate concierge for house3.app." },
           { role: "user", content: prompt },
         ],
         model: "llama-3-70b-8192", // Updated model name for better performance
@@ -57,7 +57,7 @@ export async function orchestrateAI(prompt: string, systemPrompt?: string) {
       model: "gemini-3-flash-preview",
       contents: prompt,
       config: {
-        systemInstruction: systemPrompt || "You are a luxury real estate concierge for House BZ.",
+        systemInstruction: systemPrompt || "You are a luxury real estate concierge for house3.app.",
       }
     });
 

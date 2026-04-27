@@ -52,9 +52,9 @@ export default function Navbar() {
 
   const navLinks = [
     { name: t('nav.properties'), href: '/' },
-    { name: 'Investimentos', href: '#' },
+    { name: 'Destinations', href: '/destinations' },
     { name: t('nav.concierge'), href: '#' },
-    { name: 'Cripto', href: '#' },
+    { name: '$H3APP', href: '/token' },
   ];
 
   return (
@@ -68,10 +68,10 @@ export default function Navbar() {
         <div className="flex items-center gap-12">
           <Link to="/" className="flex items-center gap-2 group cursor-pointer">
             <div className="w-10 h-10 gold-border rounded-lg flex items-center justify-center bg-card">
-              <span className="gold-text font-serif text-2xl">B</span>
+              <span className="gold-text font-serif text-xl font-bold">H3</span>
             </div>
             <span className={cn("font-serif text-2xl tracking-tight transition-colors", isScrolled || isMobileMenuOpen ? "text-foreground" : "text-white")}>
-              House <span className="gold-text">BZ</span>
+              house<span className="gold-text">3</span>
             </span>
           </Link>
 
